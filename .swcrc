@@ -7,7 +7,7 @@
     "target": "es2015",
     "transform": {
       "react": {
-        "runtime": "automatic"  // Enables the new JSX Transform (React 17+)
+        "runtime": "automatic" // Enables the new JSX Transform (React 17+)
       }
     }
   }

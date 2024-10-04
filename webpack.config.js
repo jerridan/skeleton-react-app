@@ -1,35 +1,35 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.tsx', // You can switch to `.jsx` if not using TypeScript
+  entry: "./src/index.tsx", // You can switch to `.jsx` if not using TypeScript
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   module: {
     rules: [
       {
-        test: /\.[jt]sx?$/,  // Matches .js, .jsx, .ts, and .tsx files
+        test: /\.[jt]sx?$/, // Matches .js, .jsx, .ts, and .tsx files
         exclude: /node_modules/,
         use: {
-          loader: 'swc-loader',
+          loader: "swc-loader",
         },
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: "./src/index.html",
     }),
   ],
   devServer: {
-    static: './dist',
+    static: "./dist",
     hot: true,
     port: 3000,
   },
-  mode: 'development',
+  mode: "development",
 };
